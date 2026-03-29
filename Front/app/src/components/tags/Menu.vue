@@ -1,6 +1,6 @@
 <template>
-  <div class="fixed top-0 left-0 w-full bg-white shadow-lg z-50">
-    <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-end"> 
+  <div class="fixed top-0 left-0 w-full flex justify-between  shadow-lg z-50">
+    <div class="w-[200px]   px-6 py-3 flex items-center justify-end"> 
       <div class="relative">
         <select
           v-model="locale"
@@ -17,12 +17,19 @@
         </div>
       </div>
     </div>
+    <div class=" w-[150px] items-center flex justify-between mr-[20px]">  
+      <a href="https://eu-central-1bjxkrimqu.auth.eu-central-1.amazoncognito.com/login?client_id=79tlitdlu0haogq1201dt31kae&response_type=code&scope=openid+email+phone&redirect_uri=http://localhost:5173/">Login</a>
+      <a href="https://eu-central-1bjxkrimqu.auth.eu-central-1.amazoncognito.com/login?client_id=79tlitdlu0haogq1201dt31kae&response_type=code&scope=openid+email+phone&redirect_uri=http://localhost:5173/">Sign up</a> 
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue';
 import { useI18n } from 'vue-i18n'
 const { locale } = useI18n()
+
+const isVisibleRegister = ref(false)
 </script>
 
 <style scoped>
